@@ -146,32 +146,52 @@ console.log("LYOV");
 
 
 //b)
-function f(arr) {
-    let arr1 = [];
-    let obj = {}
+// function f(arr) {
+//     let arr1 = [];
+//     let obj = {}
 
-    for (let i = 0; i < arr.length; i++) {
-        if (obj[arr[i]] === undefined) {
-            obj[arr[i]] = 1;
-        } else {
-            obj[arr[i]]++
-        }
+//     for (let i = 0; i < arr.length; i++) {
+//         if (obj[arr[i]] === undefined) {
+//             obj[arr[i]] = 1;
+//         } else {
+//             obj[arr[i]]++
+//         }
+//     }
+//     for (let key in obj) {
+//         if (obj[key] === 1) {
+//             arr1.push(key)
+//         }
+//     }
+//     return arr1
+// }
+
+// console.log(f([2, 3, 4, 5, 6, 12, 6]));
+
+
+
+
+
+function sumOfDigits(num) {
+    let sum = 0;
+    while (num > 0) {
+        sum += num % 10;
+        num = Math.floor(num / 10);
     }
-    for (let key in obj) {
-        if (obj[key] === 1) {
-            arr1.push(key)
-        }
-    }
-    return arr1
+    return sum;
 }
 
-console.log(f([2, 3, 4, 5, 6, 12, 6]));
+function func(n) {
+    let result = [];
+    for (let i = 1; i <= n; i++) {
+        if (i % sumOfDigits(i) === 0) {
+            result.push(i);
+        }
+    }
+    return result;
+}
 
-
-
-
-
-
+let n = 50;
+console.log(func(n));
 
 
 
